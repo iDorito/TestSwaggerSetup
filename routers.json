@@ -1,0 +1,12 @@
+[ 
+    {
+        "nombre": "Ecometer Router 1", 
+        "id": "1",
+        "model": "TP-Link 850"
+    },
+    { 
+        "nombre": "Ecometer Router 2", 
+        "id": "2",
+        "model": "TP-Link 850" 
+    }
+]

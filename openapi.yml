@@ -1,0 +1,113 @@
+openapi: 3.0.3
+info: 
+    title: API de productos
+    version: "1.0.0"
+    description: "Una API simplepara listar productos"
+servers:
+  -  url: http://localhost:3000
+tags:
+  -  name: Hardware
+paths:
+    /antenas:
+      get:
+        summary: Retorna la lista de antenas
+        tags: 
+          - Hardware
+        responses:
+          200:
+            description: Lista de antenas
+            content:
+              application/json:
+                schema:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      nombre:
+                        type: string
+                        description: This is the type of antena, can be used to specify a location if wanted
+                      id:
+                        type: number
+                        description: This is the ID of the antena
+                      size:
+                        type: string
+                        description: The dimensions of the antena, Height-Length-Width
+          400:
+            description: BAD_REQUEST
+            # content:
+            #   application/json:
+            #     schema:
+            #       $ref: '#/components/schemas/Error'
+          401:
+            description: "UNAUTHORIZED"
+    /antenas/{id}:
+      get:
+        summary: Retorna la lista de antenas
+        tags: 
+          - Hardware
+        parameters:
+          - in: path
+            name: id
+            description: "The identifier of the antena you are getting the info"
+            schema:
+              type: integer
+            required: true
+        responses:
+          200:
+            description: Lista de antenas
+            content:
+              application/json:
+                schema:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      nombre:
+                        type: string
+                        description: This is the type of antena, can be used to specify a location if wanted
+                      id:
+                        type: number
+                        description: This is the ID of the antena
+                      size:
+                        type: string
+                        description: The dimensions of the antena, Height-Length-Width
+          400:
+            description: BAD_REQUEST
+            # content:
+            #   application/json:
+            #     schema:
+            #       $ref: '#/components/schemas/Error'
+          401:
+            description: "UNAUTHORIZED"
+    /routers:
+      get:
+        summary: Retorna la lista de routers
+        tags: 
+          - Hardware
+        responses:
+          200:
+            description: Lista de routers
+            content:
+              application/json:
+                schema:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      nombre:
+                        type: string
+                        description: This is the number of this router, can be used to specify a location if wanted
+                      id:
+                        type: number
+                        description: This is the ID of the router
+                      model:
+                        type: string
+                        description: This is the exact model of the router
+          400:
+            description: BAD_REQUEST
+            # content:
+            #   application/json:
+            #     schema:
+            #       $ref: '#/components/schemas/Error'
+          401:
+            description: "UNAUTHORIZED"
