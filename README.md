@@ -7,3 +7,5 @@ My testing for swagger, node.JS and some other stuff
   - js-yaml
   - fs
   - express/lib/request
+
+all the NodeJS moduled needs to be installed via terminal inside your IDE
